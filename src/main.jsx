@@ -8,17 +8,27 @@ import {
 import Error from './pages/Error';
 import Home from './pages/home/Home';
 import Root from './Root';
+import Register from './pages/register/Register';
+import Login from './pages/login/Login';
 
 const router = createBrowserRouter([
 
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: '/',
-        element: <Home></Home>,
-        errorElement:<Error></Error>
+        element: <Home></Home>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
       },
     ]
   }
