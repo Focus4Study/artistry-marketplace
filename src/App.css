@@ -1,0 +1,8 @@
+@media (min-width: 768px) { 
+  .active {
+  color: #008DDA;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #008DDA;
+  } 
+}
