@@ -7,7 +7,7 @@ const Navbar = () => {
     const links = <>
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>Home</NavLink></button>
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>All Art & craft Items</NavLink></button>
-        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>Add Craft Item</NavLink></button>
+        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/add-craft-page'}>Add Craft Item</NavLink></button>
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>My Art&Craft List</NavLink></button>
     </>
 

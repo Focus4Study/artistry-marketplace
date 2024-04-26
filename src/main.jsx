@@ -5,11 +5,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Error from './pages/Error';
+import Error from './pages/error/Error';
 import Home from './pages/home/Home';
 import Root from './Root';
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
+import AddCraftPage from './pages/addCraftPage/AddCraftPage';
 
 const router = createBrowserRouter([
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/add-craft-page',
+        element: <AddCraftPage></AddCraftPage>
       },
     ]
   }
