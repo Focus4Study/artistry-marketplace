@@ -1,10 +1,12 @@
-import Navbar from "../../shared/Navbar";
+import Banner from "./Banner";
+import CraftItems from "./CraftItems";
 
 
 const Home = () => {
     return (
-        <div>
-            <Navbar></Navbar>
+        <div className="space-y-24">
+            <Banner></Banner>
+            <CraftItems></CraftItems>
         </div>
     );
 };

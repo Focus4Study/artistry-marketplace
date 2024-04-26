@@ -7,14 +7,25 @@ import {
 } from "react-router-dom";
 import Error from './pages/Error';
 import Home from './pages/home/Home';
+import Root from './Root';
 
 const router = createBrowserRouter([
+
   {
     path: "/",
-    element: <Home></Home>,
-    errorElement: <Error></Error>
-  },
-]);
+    element: <Root></Root>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>,
+        errorElement:<Error></Error>
+      },
+    ]
+  }
+])
+
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
