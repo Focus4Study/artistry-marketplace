@@ -11,13 +11,14 @@ import Root from './Root';
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import AddCraftPage from './pages/addCraftPage/AddCraftPage';
+import AuthProvider from './context/AuthProvider';
 
 const router = createBrowserRouter([
 
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
