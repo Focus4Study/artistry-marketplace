@@ -12,6 +12,8 @@ import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import AddCraftPage from './pages/addCraftPage/AddCraftPage';
 import AuthProvider from './context/AuthProvider';
+import AllArt from './pages/allArt/AllArt';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
 
@@ -34,7 +36,14 @@ const router = createBrowserRouter([
       },
       {
         path: '/add-craft-page',
-        element: <AddCraftPage></AddCraftPage>
+        element:<PrivateRoute>
+                  <AddCraftPage></AddCraftPage>
+                </PrivateRoute>
+      },
+      {
+        path: '/all-art-craft',
+        element: <AllArt></AllArt>,
+        loader: () => fetch('http://localhost:5000/craftItem'),
       },
     ]
   }

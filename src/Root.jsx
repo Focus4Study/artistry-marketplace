@@ -7,7 +7,9 @@ const Root = () => {
         <div>
             <div className="space-y-24">
                 <Navbar></Navbar>
-                <Outlet></Outlet>
+                <div className="container mx-auto">
+                    <Outlet></Outlet>
+                </div>
                 <Footer></Footer>
             </div>
         </div>

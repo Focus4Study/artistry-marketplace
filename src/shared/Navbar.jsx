@@ -1,12 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import '../App.css'
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
 
 
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
     const links = <>
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>Home</NavLink></button>
-        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>All Art & craft Items</NavLink></button>
+        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/all-art-craft'}>All Art & craft Items</NavLink></button>
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/add-craft-page'}>Add Craft Item</NavLink></button>
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>My Art&Craft List</NavLink></button>
     </>
@@ -36,10 +46,22 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
+                {
+                    user ?
+                        <div className="navbar-end gap-5">
+                            <button onClick={handleSignOut} className="btn bg-[#008DDA] text-[#F7EEDD]">SignOut</button>
+                                <div data-tip={user.displayName} className="tooltip tooltip-bottom w-11 ">
+                                    <img className="rounded-full" src={user.photoURL}/>
+                                </div> 
+                        </div>
+
+
+                        :
                 <div className="navbar-end">
                     <button className="btn text-white font-bold bg-[#D04848] mr-3 border-0"><Link className={'px-5 py-3'} to={'/login'}>Login</Link></button>
                     <button className="btn text-white font-bold bg-[#D04848]  mr-3 border-0"><Link className={'px-5 py-3'} to={'/register'}>Register</Link></button>
                 </div>
+                }
             </div>
         </div>
     );
