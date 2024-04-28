@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 
 
 const AddCraftPage = () => {
@@ -23,16 +23,25 @@ const AddCraftPage = () => {
         console.log(newItem);
 
         // send information to server
-        fetch('http://localhost:5000/craft_item',{
+        fetch('http://localhost:5000/craftItem',{
             method:'POST',
             headers:{
-                'content-type':'application/json'
+                'Content-type':'application/json'
             },
             body: JSON.stringify(newItem)
         })
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if (data.insertedId) {
+                Swal.fire({
+                    title: 'Success',
+                    text: 'You have successfully added an item',
+                    icon: 'success',
+                    confirmButtonText: 'Continue'
+                    })
+                    form.reset()
+            }
         })
     }
 
@@ -95,7 +104,8 @@ const AddCraftPage = () => {
 
 
                     </div>
-                    <input type="submit" className="btn" value="Submit" />
+                    <input type="submit" className="btn text-white font-bold bg-[#D04848]" value="Submit" />
+                    
                 </form>
             </section>
         </div>

@@ -5,7 +5,6 @@ import { AuthContext } from "../../context/AuthProvider";
 
 
 const Login = () => {
-
     const {signIn, signInWithGoogle, signInWithGithub}=useContext(AuthContext)
     
     const navigate = useNavigate()
@@ -25,12 +24,14 @@ const Login = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
     const onSubmit = data => { 
         const {email} = data;
         const {password} = data;
-
+        reset(),
+        
 
         signIn(email, password)
         .then(result=>{
@@ -76,7 +77,7 @@ const Login = () => {
                              {...register("imgUrl", { required: true })}/>
                         </div>
 
-                    <input type="submit" value="Sign In" className="w-full px-8 py-3 font-semibold bg-[#008DDA] text-[#F7EEDD] rounded-md dark:bg-violet-600 dark:text-gray-50"/>
+                    <input type="submit" value="Sign In" className="w-full px-8 py-3 font-semibold bg-[#D04848] text-[#F7EEDD] rounded-md dark:bg-violet-600 dark:text-gray-50"/>
                 </form>
 
                 <div className="flex items-center w-full my-4">

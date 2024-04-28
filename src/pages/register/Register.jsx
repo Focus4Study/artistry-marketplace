@@ -1,16 +1,18 @@
-import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthProvider";
+import { useContext } from "react";
 
 
 
 const Register = () => {
-
+    
     const { createUser, updateUserInfo, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state
+
+    
 
     const handleSocialLogin = socialProvider =>{
         socialProvider()
@@ -25,28 +27,28 @@ const Register = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
-    } = useForm()
+    } = useForm();
     const onSubmit = data => { 
         const {name} = data;
         const {imgUrl} = data;
         const {email} = data;
         const {password} = data;
+        reset()
 
 
     createUser(email, password, name, imgUrl)
     .then(()=>{
         updateUserInfo(name, imgUrl)
             .then(()=>{
-                navigate(from) 
+                navigate(from)                
             })   
     })
         .catch(error => {
             console.error(error);
         })
      }
-
-
 
 
 return (
@@ -88,7 +90,7 @@ return (
                         {errors.password && <span className="text-red-600 font-bold">This field is required</span>}
                     </div>
                 </div>
-                <input type="submit" value="Register" className="w-full px-8 py-3 font-semibold bg-[#008DDA] text-[#F7EEDD] rounded-md dark:bg-violet-600 dark:text-gray-50" />
+                <input  type="submit" value="Register" className="w-full px-8 py-3 font-semibold bg-[#D04848] text-[#F7EEDD] rounded-md dark:bg-violet-600 dark:text-gray-50" />
             </form>
 
             <div className="flex items-center w-full my-4">

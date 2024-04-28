@@ -27,7 +27,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Artistry Marketplace</a>
+                    <a className="btn btn-ghost text-xl"><span className="text-[#D04848]">Artistry</span> Marketplace</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -37,8 +37,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="mr-3 border-0"><Link className={'px-5 py-3'} to={'/login'}>Login</Link></button>
-                    <button className="mr-3 border-0"><Link className={'px-5 py-3'} to={'/register'}>Register</Link></button>
+                    <button className="btn text-white font-bold bg-[#D04848] mr-3 border-0"><Link className={'px-5 py-3'} to={'/login'}>Login</Link></button>
+                    <button className="btn text-white font-bold bg-[#D04848]  mr-3 border-0"><Link className={'px-5 py-3'} to={'/register'}>Register</Link></button>
                 </div>
             </div>
         </div>
