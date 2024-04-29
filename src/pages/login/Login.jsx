@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -17,6 +18,12 @@ const Login = () => {
             .then(result=>{
                 if(result.user){
                     navigate(from)
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'You have successfully logged in',
+                        icon: 'success',
+                        confirmButtonText: 'Continue'
+                        })
                 }
             })
     }
@@ -36,6 +43,12 @@ const Login = () => {
         signIn(email, password)
         .then(result=>{
             console.log(result.user);
+            Swal.fire({
+                title: 'Success',
+                text: 'You have successfully logged in',
+                icon: 'success',
+                confirmButtonText: 'Continue'
+                })  
         })
         .catch(error=>{
             console.error(error);

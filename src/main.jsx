@@ -14,6 +14,7 @@ import AddCraftPage from './pages/addCraftPage/AddCraftPage';
 import AuthProvider from './context/AuthProvider';
 import AllArt from './pages/allArt/AllArt';
 import PrivateRoute from './PrivateRoute';
+import CardDetails from './shared/CardDetails';
 
 const router = createBrowserRouter([
 
@@ -35,10 +36,17 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
+        path: '/cardDetails/:id',
+        element:  <PrivateRoute>
+                    <CardDetails></CardDetails>
+                  </PrivateRoute>,
+         loader: () => fetch('http://localhost:5000/craftItem')
+      },
+      {
         path: '/add-craft-page',
-        element:<PrivateRoute>
-                  <AddCraftPage></AddCraftPage>
-                </PrivateRoute>
+        element: <PrivateRoute>
+          <AddCraftPage></AddCraftPage>
+        </PrivateRoute>
       },
       {
         path: '/all-art-craft',

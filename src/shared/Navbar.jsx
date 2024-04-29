@@ -49,7 +49,7 @@ const Navbar = () => {
                 {
                     user ?
                         <div className="navbar-end gap-5">
-                            <button onClick={handleSignOut} className="btn bg-[#008DDA] text-[#F7EEDD]">SignOut</button>
+                            <button onClick={handleSignOut} className="btn bg-[#D04848] text-[#F7EEDD]">SignOut</button>
                                 <div data-tip={user.displayName} className="tooltip tooltip-bottom w-11 ">
                                     <img className="rounded-full" src={user.photoURL}/>
                                 </div> 

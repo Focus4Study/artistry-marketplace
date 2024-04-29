@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthProvider";
 import { useContext } from "react";
+import Swal from "sweetalert2";
 
 
 
@@ -42,7 +43,13 @@ const Register = () => {
     .then(()=>{
         updateUserInfo(name, imgUrl)
             .then(()=>{
-                navigate(from)                
+                navigate(from)  
+                Swal.fire({
+                    title: 'Success',
+                    text: 'You have successfully registered',
+                    icon: 'success',
+                    confirmButtonText: 'Continue'
+                    })              
             })   
     })
         .catch(error => {
