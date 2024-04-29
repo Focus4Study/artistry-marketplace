@@ -70,7 +70,8 @@ const AddCraftPage = () => {
 
 
                         <label htmlFor="short description" className="text-sm mr-5">Short Description</label>
-                        <input name="short_description" id="short description" type="text" placeholder="Short Description" className="input input-bordered col-span-3 w-full max-w-xs focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                        {/* <input name="short_description" id="short description" type="text" placeholder="Short Description" className="input input-bordered col-span-3 w-full max-w-xs focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" /> */}
+                        <textarea name="short_description" id="" cols="50" rows="10" type="text" placeholder="Short Description" className="input input-bordered col-span-3 w-full max-w-xs h-28 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" ></textarea>
 
 
 
@@ -98,7 +99,7 @@ const AddCraftPage = () => {
                         <input name="stockStatus" id="stockStatus" type="number" placeholder="Stock Status" className="input input-bordered col-span-3 w-full max-w-xs focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
 
                         <label htmlFor="User Name" className="text-sm mr-5">User Name</label>
-                        <input name="name" id="user_name" type="email" placeholder="User Name" className="input input-bordered col-span-3 w-full max-w-xs focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                        <input name="name" id="user_name" type="text" placeholder="User Name" className="input input-bordered col-span-3 w-full max-w-xs focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
 
 
                         <label htmlFor="User Email" className="text-sm mr-5">User Email</label>
