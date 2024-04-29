@@ -1,4 +1,6 @@
+
 import { useLoaderData, useParams } from "react-router-dom";
+
 
 const CardDetails = () => {
 
@@ -28,7 +30,7 @@ const CardDetails = () => {
                             <div className="badge badge-outline border-[#D04848] text-[#D04848] gap-2 py-3 px-5">
                                 {subcategory_Name}
                             </div>
-                            
+
                             <div className="badge badge-outline border-[#D04848] text-[#D04848] gap-2 py-3 px-5">
                                 <span>Rating: {rating}</span>
                             </div>
@@ -40,8 +42,11 @@ const CardDetails = () => {
                         <p className="mt-6 mb-8 sm:mb-12">
                             {short_description}
                         </p>
-                        <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                            <button className="px-8 py-3 text-lg font-semibold rounded bg-[#D04848] text-[#F7EEDD] dark:bg-violet-600 dark:text-gray-50">Buy for only: {price}$</button>
+                        <div className="flex gap-x-5">
+
+                            <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+                                <button className="px-8 py-3 text-lg font-semibold rounded bg-[#D04848] text-[#F7EEDD] dark:bg-violet-600 dark:text-gray-50">Buy for only: {price}$</button>
+                            </div>
                         </div>
                     </div>
                 </div>

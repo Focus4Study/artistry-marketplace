@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 
 
@@ -12,7 +12,7 @@ const Register = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state
-
+    const [registerError, setRegisterError]= useState('')
     
 
     const handleSocialLogin = socialProvider =>{
@@ -54,6 +54,7 @@ const Register = () => {
     })
         .catch(error => {
             console.error(error);
+            setRegisterError(error)
         })
      }
 

@@ -15,6 +15,8 @@ import AuthProvider from './context/AuthProvider';
 import AllArt from './pages/allArt/AllArt';
 import PrivateRoute from './PrivateRoute';
 import CardDetails from './shared/CardDetails';
+import MyArtList from './pages/myArtList/MyArtList';
+import UpdatePage from './pages/updatePage/UpdatePage';
 
 const router = createBrowserRouter([
 
@@ -37,21 +39,35 @@ const router = createBrowserRouter([
       },
       {
         path: '/cardDetails/:id',
-        element:  <PrivateRoute>
-                    <CardDetails></CardDetails>
-                  </PrivateRoute>,
-         loader: () => fetch('http://localhost:5000/craftItem')
+        element: <PrivateRoute>
+          <CardDetails></CardDetails>
+        </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/craftItem')
       },
       {
         path: '/add-craft-page',
         element: <PrivateRoute>
           <AddCraftPage></AddCraftPage>
-        </PrivateRoute>
+        </PrivateRoute>,
+      },
+      {
+        path: '/update/:id',
+        element: <PrivateRoute>
+          <UpdatePage></UpdatePage>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/craftItem/${params.id}`)
       },
       {
         path: '/all-art-craft',
         element: <AllArt></AllArt>,
         loader: () => fetch('http://localhost:5000/craftItem'),
+      },
+      {
+        path: '/my-art-list',
+        element: <PrivateRoute>
+          <MyArtList></MyArtList>
+        </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/craftItem')
       },
     ]
   }

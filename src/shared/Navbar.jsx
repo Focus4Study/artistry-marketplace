@@ -8,6 +8,9 @@ const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
 
+
+
+
     const handleSignOut = () => {
         logOut()
             .then()
@@ -18,7 +21,7 @@ const Navbar = () => {
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>Home</NavLink></button>
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/all-art-craft'}>All Art & craft Items</NavLink></button>
         <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/add-craft-page'}>Add Craft Item</NavLink></button>
-        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>My Art&Craft List</NavLink></button>
+        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={`/my-art-list`}>My Art&Craft List</NavLink></button>
     </>
 
 
