@@ -30,7 +30,7 @@ const UpdatePage = () => {
         console.log(updatedItem);
 
         // send information to server
-        fetch(`http://localhost:5000/craftItem/${_id}`,{
+        fetch(`https://artistry-marketplace.vercel.app/craftItem/${_id}`,{
             method:'PUT',
             headers:{
                 'Content-type':'application/json'

@@ -26,7 +26,7 @@ const AddCraftPage = () => {
         console.log(newItem);
 
         // send information to server
-        fetch('http://localhost:5000/craftItem',{
+        fetch('https://artistry-marketplace.vercel.app/craftItem',{
             method:'POST',
             headers:{
                 'Content-type':'application/json'

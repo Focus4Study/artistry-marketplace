@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/craftItem')
+        loader: () => fetch('https://artistry-marketplace.vercel.app/craftItem')
       },
       {
         path: '/register',
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <CardDetails></CardDetails>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/craftItem')
+        loader: () => fetch('https://artistry-marketplace.vercel.app/craftItem')
       },
       {
         path: '/add-craft-page',
@@ -57,24 +57,24 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <UpdatePage></UpdatePage>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/craftItem/${params.id}`)
+        loader: ({params}) => fetch(`https://artistry-marketplace.vercel.app/craftItem/${params.id}`)
       },
       {
         path: '/all-art-craft',
         element: <AllArt></AllArt>,
-        loader: () => fetch('http://localhost:5000/craftItem'),
+        loader: () => fetch('https://artistry-marketplace.vercel.app/craftItem'),
       },
       {
         path: '/my-art-list',
         element: <PrivateRoute>
           <MyArtList></MyArtList>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/craftItem')
+        loader: () => fetch('https://artistry-marketplace.vercel.app/craftItem')
       },
       {
         path: '/category/:subcategory_Name',
         element: <Category></Category>,
-        loader: () => fetch('http://localhost:5000/craftItem')
+        loader: () => fetch('https://artistry-marketplace.vercel.app/craftItem')
       },
     ]
   }
