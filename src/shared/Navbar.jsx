@@ -18,10 +18,10 @@ const Navbar = () => {
     }
 
     const links = <>
-        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/'}>Home</NavLink></button>
-        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/all-art-craft'}>All Art & craft Items</NavLink></button>
-        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={'/add-craft-page'}>Add Craft Item</NavLink></button>
-        <button className="mr-3 border-0"><NavLink className={'px-5 py-3'} to={`/my-art-list`}>My Art&Craft List</NavLink></button>
+        <button className="mr-3 border-0"><NavLink className={'lg:px-5 lg:py-3'} to={'/'}>Home</NavLink></button>
+        <button className="mr-3 border-0"><NavLink className={'lg:px-5 lg:py-3'} to={'/all-art-craft'}>All Art & craft Items</NavLink></button>
+        <button className="mr-3 border-0"><NavLink className={'lg:px-5 lg:py-3'} to={'/add-craft-page'}>Add Craft Item</NavLink></button>
+        <button className="mr-3 border-0"><NavLink className={'lg:px-5 lg:py-3'} to={`/my-art-list`}>My Art&Craft List</NavLink></button>
     </>
 
 
@@ -40,7 +40,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl"><span className="text-[#D04848]">Artistry</span> Marketplace</a>
+                    <a className="btn btn-ghost w-12 lg:w-full text-xl"><span className="text-[#D04848]">Artistry</span> Marketplace</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -61,8 +61,8 @@ const Navbar = () => {
 
                         :
                 <div className="navbar-end">
-                    <button className="btn text-white font-bold bg-[#D04848] mr-3 border-0"><Link className={'px-5 py-3'} to={'/login'}>Login</Link></button>
-                    <button className="btn text-white font-bold bg-[#D04848]  mr-3 border-0"><Link className={'px-5 py-3'} to={'/register'}>Register</Link></button>
+                    <button className=" rounded-md btn text-sm lg:text-lg text-white lg:font-bold bg-[#D04848] mr-3 border-0"><Link className={'p-3 lg:px-5 lg:py-3'} to={'/login'}>Login</Link></button>
+                    <button className="btn rounded-md text-sm lg:text-lg text-white lg:font-bold bg-[#D04848]  mr-3 border-0"><Link className={'p-3 lg:px-5 lg:py-3'} to={'/register'}>Register</Link></button>
                 </div>
                 }
             </div>

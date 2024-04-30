@@ -17,6 +17,7 @@ import PrivateRoute from './PrivateRoute';
 import CardDetails from './shared/CardDetails';
 import MyArtList from './pages/myArtList/MyArtList';
 import UpdatePage from './pages/updatePage/UpdatePage';
+import Category from './pages/category.jsx/Category';
 
 const router = createBrowserRouter([
 
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/craftItem')
       },
       {
         path: '/register',
@@ -67,6 +69,11 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <MyArtList></MyArtList>
         </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/craftItem')
+      },
+      {
+        path: '/category/:subcategory_Name',
+        element: <Category></Category>,
         loader: () => fetch('http://localhost:5000/craftItem')
       },
     ]
