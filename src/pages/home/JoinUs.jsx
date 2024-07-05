@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const JoinUs = () => {
     return (
-        <div>
+        <div id="joinUs">
             <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/L6pKFD0/Figure-Charcoal-Sketch.jpg)' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
